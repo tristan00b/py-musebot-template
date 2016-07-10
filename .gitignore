@@ -1,0 +1,14 @@
+# Derived files
+__pycache__/
+*.py[cod]
+data/json
+
+# Deps
+pyo/
+
+# OS X
+.DS_Store
+._*
+
+# Test files
+test*
