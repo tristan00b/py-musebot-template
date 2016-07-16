@@ -39,6 +39,7 @@ Pyo dependencies:
 - libsndfile (http://www.mega-nerd.com/libsndfile/)
 - portaudio (http://www.portaudio.com/)
 - portmidi (http://portmedia.sourceforge.net/portmidi/)
+- wxPython (https://wxpython.org)
 
 ## Using the template
 

@@ -17,6 +17,7 @@
 #       - libsndfile (http://www.mega-nerd.com/libsndfile/)
 #       - portaudio (http://www.portaudio.com/)
 #       - portmidi (http://portmedia.sourceforge.net/portmidi/)
+#       - wxPython (https://wxpython.org)
 #
 ################################################################################
 #!/usr/bin/env bash
@@ -40,7 +41,7 @@ echo 'Updating homebrew...'
 brew update
 
 echo 'Installing dependencies...'
-brew install python git liblo libsndfile portaudio portmidi
+brew install python git liblo libsndfile portaudio portmidi wxpython
 
 echo 'Building Pyo...'
 if [ ! -d "./pyo" ]; then
