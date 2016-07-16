@@ -3,7 +3,7 @@
 _**Note: This template is a work in progress and currently does not work in any way, shape, or form!**_  
 _**Note: This template has only been tested under OS X, Python 2.7.12+, and Pyo 0.8.0**_
 
-A template for creating MusebBots in Python.
+A template for creating MusebBots in Python. This template uses [Pyo](http://ajaxsoundstudio.com/) for synthesis and OSC communication.
 
 ## Installation
 
@@ -50,7 +50,7 @@ Pyo dependencies:
 
 ## Caveats
 
-While you are free to choose your own synthesis method, the template uses the Pyo library. Currently Pyo can only be used with Python 2.6, 2.7. The convenience of Pyo, however, is that it includes high-level tools for sound synthesis, as well as takes care of MIDI and OSC operations.
+- Currently Pyo can only be used with Python 2.6/2.7, and this template targets Python 2.7 only.
 
 ## More Info
 
