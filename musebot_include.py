@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 
 from copy import deepcopy
-from liblo import ServerThread, Address, UDP
 from pyo import Server, OscDataSend, OscDataReceive
 from threading import Thread, Timer
 from time import sleep
