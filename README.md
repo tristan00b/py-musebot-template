@@ -1,6 +1,6 @@
 # Musebot Template for Python
 
-_**Note: This template is a work in progress and currently does not work in any way, shape, or form!**_  
+_**Note: This template is a work in progress and subject to breaking changes**_  
 _**Note: This template has only been tested under OS X, Python 2.7.12+, and Pyo 0.8.0**_
 
 A template for creating MusebBots in Python. This template uses [Pyo](http://ajaxsoundstudio.com/) for synthesis and OSC communication.
