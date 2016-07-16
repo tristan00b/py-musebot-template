@@ -34,9 +34,6 @@ class Musebot(object):
             self._thread.join()
 
     def __init__(self, config_path='config.txt'):
-
-        # print('initializing Musebot')
-
         self.parse_config_file(config_path)
         # init members & properties
         self._server = Server().boot() # do first
@@ -73,9 +70,6 @@ class Musebot(object):
         self._osc_recv.addAddress(address)
 
     def osc_listener_callback(self, address, *args):
-        # print('osc callback:')
-        # print('--- address: '+address)
-        # print('--- args: ', args)
         if address in self._osc_listeners:
             self._osc_listeners[address](args)
 
@@ -125,15 +119,7 @@ class Musebot(object):
         return self._heartbeat
 
 def main():
-    mb = Musebot()
-
-    # print('--- config', mb.config)
-    # print('--- starting musebot "'+mb.id+'" (press return key to stop)')
-    # mb.run()
-    # raw_input()
-    # print('--- stopping musebot')
-    # mb.shutdown()
-
+    pass
 
 if __name__ == '__main__':
     main()
