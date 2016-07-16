@@ -36,7 +36,6 @@ class Musebot(object):
         self.parse_config_file(config_path)
         # init members & properties
         self._server = Server().boot() # do first
-        self._gain = None
         self._heartbeat = Musebot.Heartbeat(self._config)
         self._osc_listeners = {}
         self._osc_recv = OscDataReceive(7476, '/', self.osc_listener_callback)
