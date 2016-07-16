@@ -17,7 +17,7 @@ class MyBot(Musebot):
         tempo, t = time
         print(tempo, t%16)
 
-    def do(self):
+    def run(self):
         '''
         The main processing method.
 
@@ -41,7 +41,7 @@ class MyBot(Musebot):
 
 def main():
     mb = MyBot()
-    mb.run() # start the musebot
+    mb.start() # start the musebot
 
 if __name__ == '__main__':
     main()

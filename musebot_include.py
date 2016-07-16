@@ -55,13 +55,13 @@ class Musebot(object):
                 else:
                     self._config[k] = v
 
-    def do(self):
+    def run(self):
         '''Implemented in user code'''
         pass
 
-    def run(self):
+    def start(self):
         self._heartbeat.start()
-        self.do()
+        self.run()
 
     def register_osc_listener(self, address, func):
         self._osc_listeners[address] = func
