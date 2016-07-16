@@ -43,10 +43,10 @@ Pyo dependencies:
 
 ## Using the template
 
-0. Familiarize yourself with how to work with MuseBots by checking out the info links below.
-1. Copy the template directory into your `Musebots` directory (you do not need to copy the `pyo` directory). Rename template directory to be that which you will be calling your new MuseBot (e.g. noisebot). You may want to prefix the name with your initials to distinguish it from other people's MuseBots and to keep all of your Musebots together as you start building a collection (e.g. tb_noisebot).
+0. Familiarize yourself with how to work with Musebots by checking out the info links below.
+1. Copy the template directory into your `Musebots` directory (you do not need to copy the `pyo` directory). Rename template directory to be that which you will be calling your new Musebot (e.g. noisebot). You may want to prefix the name with your initials to distinguish it from other people's Musebots and to keep all of your Musebots together as you start building a collection (e.g. tb_noisebot).
 2. Open the `config.txt` file and change the first line to `id <name>` so that `<name>` matches that of the containing directory (e.g. `id tb_noisebot`).
-3. Define your MuseBot in `musebot.py`
+3. Define your Musebot in `musebot.py`
 
 ## Caveats
 
@@ -55,5 +55,5 @@ Pyo dependencies:
 ## More Info
 
 - [Musebots](http://musicalmetacreation.org/musebots/)
-- [MuseBot communication spec](https://docs.google.com/document/d/1UtdLYsOErzXKNFxrM7utHeFXgPNcC_w40lTtUxtCYO8)
+- [Musebot communication spec](https://docs.google.com/document/d/1UtdLYsOErzXKNFxrM7utHeFXgPNcC_w40lTtUxtCYO8)
 - [Pyo](http://ajaxsoundstudio.com/software/pyo/)
