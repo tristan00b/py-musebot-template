@@ -39,7 +39,7 @@ class Musebot(object):
         self._server = Server().boot() # do first
         self._heartbeat = Musebot.Heartbeat(self._config)
         self._osc_listeners = {}
-        self._osc_recv = OscDataReceive(7476, '/', self.osc_listener_callback)
+        self._osc_recv = OscDataReceive(self.port, '/', self.osc_listener_callback)
         # register osc listeners
         self.register_osc_listener('/agent/gain', self.gain)
         self.register_osc_listener('/agent/kill', self.shutdown)
