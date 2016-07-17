@@ -23,9 +23,10 @@ class Musebot(object):
                 self._osc.send(self._msg)
                 sleep(self._del)
 
-        def start(self):
+        def start(self, run_as_deamon=True):
             self._keep_alive = True
             self._thread = Thread(target=self.beat)
+            self._thread.daemon = run_as_deamon # True => die when main thread dies
             self._thread.start()
 
         def stop(self):
@@ -77,7 +78,6 @@ class Musebot(object):
 
     def shutdown(self, *args):
         print(self.id+' shutting down!')
-        self._heartbeat.stop()
         self._server.stop()
         self._server.closeGui()
 
