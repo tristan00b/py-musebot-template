@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from copy import deepcopy
-from pyo import Server, OscDataSend, OscDataReceive
+from pyo import Server, OscDataSend, OscDataReceive, serverBooted
 from threading import Thread, Timer
 from time import sleep
 
@@ -19,19 +19,15 @@ class Musebot(object):
                 host=config['mc_hostname'])
 
         def beat(self):
-            while self._keep_alive:
+            while True:
                 self._osc.send(self._msg)
                 sleep(self._del)
+                if not serverBooted(): break
 
         def start(self, run_as_deamon=True):
-            self._keep_alive = True
             self._thread = Thread(target=self.beat)
             self._thread.daemon = run_as_deamon # True => die when main thread dies
             self._thread.start()
-
-        def stop(self):
-            self._keep_alive = False
-            self._thread.join()
 
     def __init__(self, config_path='config.txt'):
         self.parse_config_file(config_path)
@@ -79,6 +75,7 @@ class Musebot(object):
     def shutdown(self, *args):
         print(self.id+' shutting down!')
         self._server.stop()
+        self._server.shutdown()
         self._server.closeGui()
 
     def gain(self, gain, *args):
