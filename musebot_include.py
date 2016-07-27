@@ -75,7 +75,6 @@ class Musebot(object):
     def shutdown(self, *args):
         print(self.id+' shutting down!')
         self._server.stop()
-        self._server.shutdown()
         self._server.closeGui()
 
     def gain(self, gain, *args):
