@@ -9,7 +9,7 @@
 #
 # Dependencies:
 #   - Homebrew (http://brew.sh/)
-#   - Python 3 (https://www.python.org/)
+#   - Python (https://www.python.org/)
 #   - python-osc (https://pypi.python.org/pypi/python-osc)
 #   - Git (https://git-scm.com/)
 #   - Pyo (http://ajaxsoundstudio.com/)
