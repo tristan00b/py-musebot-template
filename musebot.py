@@ -1,47 +1,42 @@
-# -*- coding: utf-8 -*-
-
 from musebot_include import Musebot
 from pyo import *
 
 class MyBot(Musebot):
 
-    def __init__(self, config_path='config.txt'):
+  def __init__(self, config_path='config.txt'):
+    # init the base class
+    super(MyBot, self).__init__(config_path)
 
-        # init the base class
-        super(MyBot, self).__init__(config_path)
+    # init your subclass (e.g. register callbacks)
+    # self.register_osc_listener('/mc/time', self.time)
 
-        # init your subclass (e.g. register callbacks)
-        # self.register_osc_listener('/mc/time', self.time)
+  def time(self, time, *args):
+    tempo, t = time
+    print(tempo, t%16)
 
-    def time(self, time, *args):
-        tempo, t = time
-        print(tempo, t%16)
+  def run(self):
+    '''
+    The main processing method.
 
-    def run(self):
-        '''
-        The main processing method.
+    You do not need to boot the server from here, this is done in within the
+    Musebot base class in order to be able to register OSC listeners
+    required by all musebots.
 
-        You do not need to boot the server from here, this is done in within the
-        Musebot base class in order to be able to register OSC listeners
-        required by all musebots.
+    You are still required to call start(), however, to begin audio
+    processing (see `main` definition). The audio server can be accessed via
+    the `server` property inherited from `Musebot`.
 
-        You are still required to call start(), however, to being audio
-        processing. The server is can be accessed via the `server` property
-        inherited from Musebot.
-
-        This method should also block when called, which is handled for you by
-        calling `server.gui`. Otherwise you would need to devise your own scheme
-        for blocking, and possibly override the `shutdown`.
-        '''
-        s = self.server.start() # server already booted
-        a = Sine().out()
-        s.gui(locals())
+    This method should also block when called. The way to do so is by
+    calling `s.gui(locals())`.
+    '''
+    s = self.server.start() # server already booted
+    a = Sine().out()
+    s.gui(locals())
 
 
 
 def main():
-    mb = MyBot()
-    mb.start() # start the musebot
+  MyBot().start() # Instantiate bot and call start to begin audio processing
 
 if __name__ == '__main__':
-    main()
+  main()

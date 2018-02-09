@@ -2,4 +2,4 @@
 
 cd "`dirname "$0"`"
 
-python musebot.py
+python3 musebot.py

@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 from copy import deepcopy
 from pyo import Server, OscDataSend, OscDataReceive, serverBooted
 from threading import Thread, Timer
