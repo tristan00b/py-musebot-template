@@ -30,7 +30,7 @@ class MyBot(Musebot):
     calling `s.gui(locals())`.
     '''
     s = self.server.start() # server already booted
-    a = Sine().out()
+    a = Sine(mul=0.01).mix(2).out()
     s.gui(locals())
 
 
