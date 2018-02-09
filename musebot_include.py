@@ -8,7 +8,7 @@ class Musebot(object):
     class Heartbeat:
 
         def __init__(self, config={}):
-            self._del = 5
+            self._del = 1
             self._msg = [config['id']]
             self._osc = OscDataSend(
                 's',
