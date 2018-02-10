@@ -4,10 +4,14 @@ from threading import Thread, Timer
 from time import sleep
 
 class MusebotBase(object):
-
+  '''
+  This class includes the functionality required by all Musebots, namely the
+  ability to parse the config file, communicate with the server, and gracefully
+  start up and shut down as per the Musebot communication spec.
+  '''
   class Heartbeat:
     def __init__(self, config={}):
-      self._del = 1
+      self._del = 1 # 1 beat per second
       self._msg = [config['id']]
       self._osc = OscDataSend('s', config['mc_listen_port'],
         '/agent/alive', host=config['mc_hostname'])

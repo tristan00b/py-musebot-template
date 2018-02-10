@@ -18,16 +18,15 @@ class Musebot(MusebotBase):
     '''
     The main processing method.
 
-    You do not need to boot the server from here, this is done in within the
-    Musebot base class in order to be able to register OSC listeners
-    required by all musebots.
+    You do not need to boot the server, this is done in within the base class in
+    order to be able to register OSC listeners required by all musebots.
 
-    You are still required to call start(), however, to begin audio
-    processing (see `main` definition). The audio server can be accessed via
-    the `server` property inherited from `Musebot`.
+    To begin audio processing, call `start()` on the audio server, accessesed
+    via the `server` property inherited from `MusebotBase`.
 
-    This method should also block when called. The way to do so is by
-    calling `s.gui(locals())`.
+    This thread should also block in order to prevent the bot from shutting down
+    prematurely. The easiest method is to call `gui(locals())` on the audio
+    server, as demonstrated below.
     '''
     s = self.server.start() # server already booted
     a = Sine(mul=0.01).mix(2).out()
