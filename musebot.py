@@ -28,11 +28,15 @@ class Musebot(MusebotBase):
     prematurely. The easiest method is to call `gui(locals())` on the audio
     server, as demonstrated below.
     '''
-    s = self.server.start() # server already booted
-    a = Sine(mul=0.01).mix(2).out()
-    s.gui(locals())
+    s  = self.server
+    a  = Sine(mul=0.01).mix(2)
+    hr = Harmonizer(a).out()
+    ch = Chorus(a).out()
+    sh = FreqShift(a).out()
 
-
+    (s
+      .start()        # start audio procesing
+      .gui(locals())) # render UI (blocking call)
 
 def main():
   Musebot().start() # Instantiate bot and start heartbeat
