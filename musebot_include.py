@@ -3,7 +3,7 @@ from pyo import Server, OscDataSend, OscDataReceive, serverBooted
 from threading import Thread, Timer
 from time import sleep
 
-class Musebot(object):
+class MusebotBase(object):
 
   class Heartbeat:
     def __init__(self, config={}):
@@ -27,7 +27,7 @@ class Musebot(object):
     self.parse_config_file(config_path)
     # init members & properties
     self._server = Server().boot() # do first
-    self._heartbeat = Musebot.Heartbeat(self._config)
+    self._heartbeat = MusebotBase.Heartbeat(self._config)
     self._osc_listeners = {}
     self._osc_recv = OscDataReceive(self.port, '/', self.osc_listener_callback)
     # register osc listeners

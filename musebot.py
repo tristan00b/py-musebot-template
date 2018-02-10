@@ -1,11 +1,11 @@
-from musebot_include import Musebot
+from musebot_include import MusebotBase
 from pyo import *
 
-class MyBot(Musebot):
+class Musebot(MusebotBase):
 
   def __init__(self, config_path='config.txt'):
     # init the base class
-    super(MyBot, self).__init__(config_path)
+    super(Musebot, self).__init__(config_path)
 
     # init your subclass (e.g. register callbacks)
     # self.register_osc_listener('/mc/time', self.time)
@@ -36,7 +36,7 @@ class MyBot(Musebot):
 
 
 def main():
-  MyBot().start() # Instantiate bot and call start to begin audio processing
+  Musebot().start() # Instantiate bot and start heartbeat
 
 if __name__ == '__main__':
   main()
